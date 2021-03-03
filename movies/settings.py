@@ -26,7 +26,7 @@ SECRET_KEY = 'vsi(=j)qkoq3tw%*7z^-t@da*h&=_@bq!m+k(huc_v51a7^-rm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
