@@ -18,6 +18,7 @@ class Movie(models.Model):
     director = models.CharField(max_length=200, blank=True)
     producer = models.CharField(max_length=200, blank=True)
     release_date = models.DateField()
+    imagen = models.CharField(max_length=100, blank=True)
     url = models.CharField(max_length=100, blank=True)
     characters = models.ManyToManyField(Character, related_name="Characters", blank=True)
 

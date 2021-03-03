@@ -11,8 +11,9 @@ def index(request):
     serialize = CharacterSerializer(Character.objects.all(), many=True)
     return render(request, 'movies/movies.html', {'data':serialize.data})
 
-def get_movie(request, title):
+def get_movie(request):
     if request.method == 'GET':
+        title = request.GET.get('title', None)
         query = Movie.objects.filter(title=title).all()
         serialize = MovieSerializer(query, many=True)
         return render(request, 'movies/movies.html', {'data':serialize.data})

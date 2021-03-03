@@ -21,6 +21,7 @@ class LoadData():
         result = requests.get(url).json()
         data = result['results']
         for film in data:
+            movie_name = film['title']
             create_movie = Movie(
                 title=film['title'],
                 episode_id=film['episode_id'],
@@ -28,6 +29,7 @@ class LoadData():
                 director=film['director'],
                 producer=film['producer'],
                 release_date=film['release_date'],
+                imagen='images/movies/' + movie_name.replace(' ','_') + '.jpg',
                 url=film['url'])
             
             create_movie.save()
