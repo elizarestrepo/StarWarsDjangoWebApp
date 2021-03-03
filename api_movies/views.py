@@ -8,4 +8,7 @@ def index(request):
         LoadData.get_characters()
     if not Movie.objects.exists():
         LoadData.get_movies()
-    return render(request, 'movies/movies.html', {})
+    serialize = CharacterSerializer(Character.objects.all(), many=True)
+    return render(request, 'movies/movies.html', {'data':serialize})
+
+
