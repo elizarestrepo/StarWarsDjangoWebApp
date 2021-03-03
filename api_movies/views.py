@@ -11,4 +11,10 @@ def index(request):
     serialize = CharacterSerializer(Character.objects.all(), many=True)
     return render(request, 'movies/movies.html', {'data':serialize.data})
 
+def get_movie(request, title):
+    if request.method == 'GET':
+        query = Movie.objects.filter(title=title).all()
+        serialize = MovieSerializer(query, many=True)
+        return render(request, 'movies/movies.html', {'data':serialize.data})
+    return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
