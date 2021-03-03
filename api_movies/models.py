@@ -11,7 +11,7 @@ class Character(models.Model):
     def __str__(self):
         return str(self.id)
 
-class Movie(modesl.Model):
+class Movie(models.Model):
     title = models.TextField()
     episode_id = models.IntegerField()
     resume = models.TextField(blank=True)
