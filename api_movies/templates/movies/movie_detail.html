@@ -5,21 +5,24 @@
 <div class = "container"> 
     <br><br>
     <div class="row"> 
-        <div class="col-md-5">
-          <br>
-          <img class="img-fluid" src="static/{{ movie.imagen }}" alt="" style = "width: 90%;">
-          <br><br>
-          <h3 class="card-title text-center ">{{ movie.name }}</h3>
-        </div> 
-        <div class="col-md-7 shadow-lg p-3 mb-5 bg-white rounded">
-          <h1 class="my-3">Food Description</h1>
-          <p class = "lead">{{ movie.resume }}</p>
-          <h1 class="my-3">Food Details</h1>
-          <ul>
-            <li>{{ movie.producer }}</li>
-            <li>{{ movie.director }}</li>
-          </ul>
-        </div>
+        {% for movie in data %}
+            <div class="col-md-5">
+                <br>
+                <img class="img-responsive" src="{% static movie.imagen %}" alt="" style = "width: 90%;">
+                <br><br>
+                <h3 class="card-title text-center ">{{ movie.title }}</h3>
+            </div> 
+            <div class="col-md-7 shadow-lg p-3 mb-5 bg-white rounded">
+                <h1 class="my-3">{{ movie.title }}</h1>
+                <p class = "lead">{{ movie.resume }}</p>
+                <h1 class="my-3">Details</h1>
+                <ul>
+                    <li>Producer: {{ movie.producer }}</li>
+                    <li>Director: {{ movie.director }}</li>
+                    <li>Release Date: {{ movie.release_date }}</li>
+                </ul>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
