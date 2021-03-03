@@ -16,6 +16,6 @@ def get_movie(request):
         title = request.GET.get('title', None)
         query = Movie.objects.filter(title=title).all()
         serialize = MovieSerializer(query, many=True)
-        return render(request, 'movies/movies.html', {'data':serialize.data})
+        return render(request, 'movies/movie_detail.html', {'data':serialize.data})
     return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 

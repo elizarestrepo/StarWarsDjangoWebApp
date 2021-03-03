@@ -10,4 +10,4 @@ class MovieSerializer(serializers.ModelSerializer):
     characters = CharacterSerializer(read_only=True, many=True)
     class Meta:
         model = Movie
-        fields = ['id', 'title', 'episode_id', 'resume', 'director', 'producer', 'release_date', 'characters']
+        fields = ['id', 'title', 'episode_id', 'resume', 'director', 'producer', 'release_date', 'imagen', 'characters']
