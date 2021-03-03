@@ -6,14 +6,14 @@ class LoadData():
     def get_characters():
         url='https://swapi.dev/api/people'
         result = requests.get(url).json()
-        data = reuslt['results']
+        data = result['results']
         for person in data:
             name_character=person['name']
             create_character, created = Character.objects.update_or_create(
                 name=person['name'], 
                 birth_year=person['birth_year'], 
                 gender=person['gender'],
-                imagen='images/characters/' + name_character.replace(' ','_') + '.jpg')
+                imagen='images/characters/' + name_character.replace(' ','_') + '.jpg',
                 url=person['url'])
     
     def get_movies():

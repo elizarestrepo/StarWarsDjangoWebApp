@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializer import CharacterSerializer, MovieSerializer
+from .serializers import CharacterSerializer, MovieSerializer
 from .models import Character, Movie
 from .data.load_data import LoadData
 
